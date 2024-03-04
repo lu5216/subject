@@ -1,0 +1,7 @@
+﻿1、python开发版本：3.8.18
+
+2、相关包：pyside2、pymysql、pandas、numpy、webbrowser、pyecharts、tushare、selenium、sqlalchemy、cryptography
+
+3、使用了chrome驱动，我的chrome版本是114.0.5735.110。如果使用的是不同版本的chrome，请下载114版本的chrome，或到：http://chromedriver.storage.googleapis.com/index.html下载对应的chrome驱动版本，并将下载好的chromedriver替换到util文件中。
+
+4、运行main.py
