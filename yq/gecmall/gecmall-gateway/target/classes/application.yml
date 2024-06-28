@@ -1,0 +1,37 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8989
+spring:
+  application:
+    name: shopping-gateway
+ribbon:
+  ConnectTimeot: 10000 # 连接超时时间（ms）
+  ReadTimeot: 10000 # 通信超时时间（ms）
+  OkToRertryOnAllOperations: ture # 是否对所有操作重试
+  MaxAutoRetriesNextServer: 1 #同一个服务不同实例的重试次数
+  MaxAutoRetries: 1 #同一实例的重试次数
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillisecond: 10000 #熔断超时时长 10000ms
+zuul:
+  routes:
+    api-manager:
+      path: /shopping-manager/**
+      service-id: shopping-sellergoods-ms
+    api-content:
+      path: /shopping-content/**
+      service-id: shopping-content-ms
+    api-search:
+      path: /shopping-search/**
+      service-id: shopping-search-ms
+    api-page:
+      path: /shopping-page/**
+      service-id: shopping-page-ms
+    
